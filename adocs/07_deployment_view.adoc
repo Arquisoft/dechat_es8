@@ -1,0 +1,17 @@
+[[section-deployment-view]]
+
+
+== Deployment View
+
+****
+This section deals with the technical infrastructure of our system, as well as its basic components.
+****
+
+****
+First of all comment that we are set to work with SOLID as the basis of the project.
+
+Starting from this base, it was decided to make a web application in javascript since it seemed the best way to approach the project.
+This is because we already knew the language and had several resources of support.
+
+As for the web server in case you have cloned the repository locally, you can execute the http-server command that will provide some ip addresses to execute the application.
+****

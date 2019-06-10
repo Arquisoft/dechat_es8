@@ -1,0 +1,29 @@
+[[section-runtime-view]]
+== Runtime View
+
+****
+.Contents
+In this section we will explain the user interaction with dechat
+****
+
+**Graphic representation**
+
+image::https://raw.githubusercontent.com/Arquisoft/dechat_es6a1/master/docs/images/Runtimeview.jpg[Runtime view,800]
+
+=== In details
+
+==== Login
+Click on Login and you can decide how to login (solid, inrupt...).
+
+==== Choose option
+Once you are logged you can choose between three options: New Chat, Join Chat and Open Chat. 
+Each of them will be explained below.
+
+==== New Chat
+If you want to create a new chat with a solid friend you must choose this option. First, you will choose your friend and the path where you want to store the chat (by default it is saved in your private directory). When everything is ready you can chat with your friend.
+
+==== Join Chat
+If someone starts a conversation with you, it will be in that section. You have got a list of your invitations and you can choose the path to store it, like in the previous option.
+
+==== Open chat
+If you want to continue a conversation, you have got a list of all of them in this section. You only have to choose one of them and can be continued.

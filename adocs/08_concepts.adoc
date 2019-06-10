@@ -1,0 +1,58 @@
+[[section-concepts]]
+== Cross-cutting Concepts
+
+****
+This section describes solution ideas that are relevant in multiple parts of the system
+****
+
+=== Concepts Mind Map
+
+image::https://raw.githubusercontent.com/Arquisoft/dechat_es6a1/master/docs/images/concepts.png[concepts.png,900]
+
+
+=== Concepts Detailed
+
+
+==== User Experience concepts
+
+User interface is only available in English because it's the most used language around the world, so we want to spread this app around the world
+
+==== Safety and security concepts
+
+The main objective of this app and Solid itself is to ensure the security of the user's data, making him or her the only one who can control him or her data storing it in his or her personal POD. 
+
+==== Architecture and design patterns
+
+The application itself is in **main.js**. There are additional libraries and services to make it work at the **lib/** folder.
+
+==== "Under-the-hood" Concepts
+* Persistency :
+****
+Data is stored in each user's private POD, so the only way to make it disappear is making the sender delete the message itself.
+****
+
+
+* Error handling :
+****
+The main error found is having a non stable internet connection, so it could make the app have a worse performance that it should have.
+****
+
+* Reporting :
+****
+We use both Travis and Code coverage (Codecov) to ensure everything is fine
+****
+
+==== Development concepts
+* Build
+****
+To build the app we use Node Js *webpack* running the following command
+----
+npm run build:web
+----
+We also use **http-server ./src** for the deployment of the app.
+****
+
+* Test
+****
+We have some basic BDD test made with **Cucumber** at **test/cucumber**.
+****
