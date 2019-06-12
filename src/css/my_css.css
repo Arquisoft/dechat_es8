@@ -7535,7 +7535,7 @@ button.bg-dark:focus {
 
 .align-self-end {
   -ms-flex-item-align: end !important;
-  align-self: flex-end !important;
+  align-self: center !important;
 }
 
 .align-self-center {
