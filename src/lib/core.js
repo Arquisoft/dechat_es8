@@ -8,6 +8,8 @@ const rdfjsSourceFromUrl = require("./rdfjssourcefactory").fromUrl;
 const URI = require("uri-js");
 //Sirve para manejar archivos en almacenes Solid
 const fileClient = require("solid-file-client");
+//Crea un id único con la fecha, el proceso y el nombre de la máquina
+const uniqid = require("uniqid");
 
 class DeChatCore {
 	
@@ -128,6 +130,58 @@ class DeChatCore {
     var a=sub +directory;
     this.inboxUrls[webId]=a;
     return this.inboxUrls[webId];
+  }
+  
+  async storeMessage(userDataUrl, username, message, friendWebId, dataSync, toSend) {
+		var friendName=await this.getFormattedName(friendWebId);
+		const messageTx = message.replace(/ /g,"U+0020");
+		const psUsername = username.replace(/ /g,"U+0020");
+		const psFriendname = friendName.replace(/ /g,"U+0020");
+		const url = userDataUrl.replace(/ /g,"_");
+		const date = (new Date()).getTime();
+
+		const messageUrl = await this.generateUniqueUrlForResource(url);
+		const sparqlUpdate = `
+		<${messageUrl}> a <${namespaces.schema}Message>;
+			<${namespaces.schema}givenName> <${psUsername}>;
+			<${namespaces.schema}friendName> <${psFriendname}>;
+			<${namespaces.schema}date> <${date}>;
+		  <${namespaces.schema}text> <${messageTx}>.
+	  `;
+        
+		try {
+		//	await dataSync.executeSPARQLUpdateForUser(userDataUrl, `INSERT DATA {${sparqlUpdate}}`);
+		await dataSync.sendToFriendsInbox(await userDataUrl, sparqlUpdate);
+		} catch (e) {
+			console.err("Could not save new message.");
+		}
+
+		if (toSend) {
+			try {
+                await dataSync.sendToFriendsInbox(await this.getUrl(friendWebId, "inbox/"), sparqlUpdate);
+                
+			} catch (e) {
+				console.err("Could not send message to friend.");
+			}
+		}
+
+  }
+  
+  async generateUniqueUrlForResource(baseurl) {
+    let url = baseurl + "#" + uniqid();
+
+    try {
+      let d = this.getObjectFromPredicateForResource(url, namespaces.rdf + "type");
+
+      while (d) {
+        url = baseurl + "#" + uniqid();
+        d = await this.getObjectFromPredicateForResource(url, namespaces.rdf + "type");
+      }
+    } catch (e) {
+      console.err("ERROR 404");
+    } finally {
+      return url;
+    }
   }
   
 }

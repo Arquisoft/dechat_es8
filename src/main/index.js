@@ -5,9 +5,11 @@ const {
   default: data
 } = require('@solid/query-ldflex');
 const Core = require('../lib/core');
+const DataSync = require('../lib/datasync');
 
 let userWebId;
 let core = new Core(auth.fetch);
+let dataSync = new DataSync(auth.fetch);
 let refreshIntervalIdInbox;
 let friendWebId;
 let userDataUrl;
@@ -146,4 +148,21 @@ async function setUpChat() {
 		i++;
 	}
 	openChat = true;
+}
+
+$("#write-chat").click(async() => {
+    const message=$("#message").val();
+    addMessage(await core.getFormattedName(userWebId),message,true);
+	document.getElementById("message").value="";
+	await core.storeMessage(userDataUrl, await core.getFormattedName(userWebId), message, friendWebId, dataSync, true);
+});
+
+function addMessage(user,message,sended){
+    var toAdd="";
+    if(sended===true){
+        toAdd="<div class='d-flex flex-row-reverse bd-highlight'><div id='right'><h5><span class='badge badge-light'>"+message+"</span></h5><h6><span class='badge badge-primary'>"+user+"</span></h6></div></div>";
+    }else{
+        toAdd="<div class='d-flex flex-row bd-highlight'><div id='left'><h5><span class='badge badge-light'>"+message+"</span></h5><h6><span class='badge badge-primary'>"+user+"</span></h6></div></div>";
+    }
+    $("#conver").append(toAdd);
 }
