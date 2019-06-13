@@ -4,6 +4,10 @@ const Q = require("q");
 //Sirve para hacer consultas SPARQL
 const newEngine = require("@comunica/actor-init-sparql-rdfjs").newEngine;
 const rdfjsSourceFromUrl = require("./rdfjssourcefactory").fromUrl;
+//Librería para trabajar con URLs
+const URI = require("uri-js");
+//Sirve para manejar archivos en almacenes Solid
+const fileClient = require("solid-file-client");
 
 class DeChatCore {
 	
@@ -75,5 +79,56 @@ class DeChatCore {
 
     return deferred.promise
   }
+  
+  async checkUserForUpdates(inboxUrl) {
+    const deferred = Q.defer();
+    const newResources = [];
+    const engine = newEngine();
+    const rdfjsSource = await rdfjsSourceFromUrl(inboxUrl, this.fetch);   
+    engine.query(`SELECT ?resource {
+      ?resource a <http://www.w3.org/ns/ldp#Resource>.
+    }`,
+      { sources: [ { type: "rdfjsSource", value: rdfjsSource } ] })
+      .then(function (result) {
+        result.bindingsStream.on("data", data => {
+          data = data.toObject();
+
+          const resource = data['?resource'].value;
+
+          if (alreadyCheckedResources.indexOf(resource) === -1) {
+            newResources.push(resource);
+            alreadyCheckedResources.push(resource);
+          }
+        });
+
+        result.bindingsStream.on("end", function () {
+          deferred.resolve(newResources);
+        });
+      });
+
+    return deferred.promise;
+  }
+  
+  async getInboxUrl(webId) {
+    var sub=webId.substring(0,webId.length-15)
+    var a=sub +"inbox/"
+    this.inboxUrls[webId]=a
+    return this.inboxUrls[webId];
+  }
+  
+  getDefaultDataUrl(webId) {
+    const parsedWebId = URI.parse(webId);
+
+    return  `${parsedWebId.scheme}://${parsedWebId.host}/public/chat_`;
+  }
+  
+  async createChatFolder(url) {
+	return await fileClient.createFolder(url).then( (success) => {
+		return true;
+	}, err => {
+		return false;
+	});
+}
+  
 }
 module.exports = DeChatCore

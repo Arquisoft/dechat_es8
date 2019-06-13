@@ -9,6 +9,8 @@ const Core = require('../lib/core');
 let userWebId;
 let core = new Core(auth.fetch);
 let refreshIntervalIdInbox;
+let friendWebId;
+let userDataUrl;
 
 auth.trackSession(async session => {
   const loggedIn = !!session;
@@ -31,7 +33,7 @@ auth.trackSession(async session => {
     
     checkForNotificationsInbox();
     
-    // refresh every 4sec
+    // refrescar cada 4 segundos
     refreshIntervalIdInbox = setInterval(checkForNotificationsInbox, 4000);
   } else {
     seePrincipalScreen();
@@ -80,8 +82,66 @@ function clearConver(){
 
 function loadChat() {  
     clearConver();
-  const dataUrl = core.getDefaultDataUrl(userWebId)+this.getAttribute("text");
+	const dataUrl = core.getDefaultDataUrl(userWebId)+this.getAttribute("text");
     friendWebId = this.getAttribute("value");
     userDataUrl = dataUrl;
     setUpChat();
+}
+
+async function checkForNotificationsInbox() {
+	  var updates = await core.checkUserForUpdates(await core.getInboxUrl(userWebId));
+	  
+	  updates.forEach(async (fileurl) => {   
+		  let message = await core.getNewMessage(fileurl,"/inbox/", dataSync,);
+		  console.log(message);  
+		  if (message) {
+				newMessageFound = true;
+				if (openChat) {
+					addMessage(await core.getFormattedName(friendWebId),message.messageTx,false);
+				} else {
+					message.date=message.date.split("/").pop();
+					friendMessages.push(message);
+				}
+			} 
+	  });
+}
+
+async function checkForNotificationsPublic() {
+  const psFriendname = (await core.getFormattedName(friendWebId)).replace(/ /g,"%20");
+  var updates = await core.checkUserForUpdates(await core.getPublicUrl(userWebId)+"/chat_"+psFriendname);
+  updates.forEach(async (fileurl) => {   
+      let message = await messageManager.getNewMessage(fileurl,"/public/chat_"+await psFriendname+"/", dataSync);
+      console.log(message);
+      if (message) {
+      newMessageFound = true;
+      message.date=message.date.split("/").pop();
+			friendMessages.push(message);
+		} 
+  });
+}
+
+async function setUpChat() {
+    const friendName = await core.getFormattedName(friendWebId);
+    const userName=await core.getFormattedName(userWebId);
+    $("#friend-name").text(friendName);
+    core.createChatFolder(userDataUrl);
+    checkForNotificationsPublic();
+    var i = 0; 
+	
+    friendMessages.sort(function(a, b) {
+      return parseFloat(a.date) - parseFloat(b.date);
+	});
+	
+	while (i < friendMessages.length) {
+		var nameThroughUrl = friendMessages[i].author.split("/").pop();
+		var friendThroughUrl = friendMessages[i].friend.split("/").pop();
+		if (nameThroughUrl === friendName && friendThroughUrl===userName) {
+			addMessage(friendName,friendMessages[i].messageTx,false);
+		}
+		else if (nameThroughUrl === userName && friendThroughUrl===friendName) {
+		  addMessage(userName,friendMessages[i].messageTx,true);
+		}
+		i++;
+	}
+	openChat = true;
 }
