@@ -11,6 +11,8 @@ let core = new Core(auth.fetch);
 let refreshIntervalIdInbox;
 let friendWebId;
 let userDataUrl;
+let friendMessages = [];
+let openChat=false;
 
 auth.trackSession(async session => {
   const loggedIn = !!session;
@@ -89,7 +91,7 @@ function loadChat() {
 }
 
 async function checkForNotificationsInbox() {
-	  var updates = await core.checkUserForUpdates(await core.getInboxUrl(userWebId));
+	  var updates = await core.checkUserForUpdates(await core.getUrl(userWebId,"inbox/"));
 	  
 	  updates.forEach(async (fileurl) => {   
 		  let message = await core.getNewMessage(fileurl,"/inbox/", dataSync,);
@@ -108,7 +110,7 @@ async function checkForNotificationsInbox() {
 
 async function checkForNotificationsPublic() {
   const psFriendname = (await core.getFormattedName(friendWebId)).replace(/ /g,"%20");
-  var updates = await core.checkUserForUpdates(await core.getPublicUrl(userWebId)+"/chat_"+psFriendname);
+  var updates = await core.checkUserForUpdates(await core.getUrl(userWebId, "public/")+"/chat_"+psFriendname);
   updates.forEach(async (fileurl) => {   
       let message = await messageManager.getNewMessage(fileurl,"/public/chat_"+await psFriendname+"/", dataSync);
       console.log(message);

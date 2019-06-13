@@ -109,13 +109,6 @@ class DeChatCore {
     return deferred.promise;
   }
   
-  async getInboxUrl(webId) {
-    var sub=webId.substring(0,webId.length-15)
-    var a=sub +"inbox/"
-    this.inboxUrls[webId]=a
-    return this.inboxUrls[webId];
-  }
-  
   getDefaultDataUrl(webId) {
     const parsedWebId = URI.parse(webId);
 
@@ -128,7 +121,14 @@ class DeChatCore {
 	}, err => {
 		return false;
 	});
-}
+  }
+  
+  async getUrl(webId, directory) {
+    var sub=webId.substring(0,webId.length-15);
+    var a=sub +directory;
+    this.inboxUrls[webId]=a;
+    return this.inboxUrls[webId];
+  }
   
 }
 module.exports = DeChatCore
