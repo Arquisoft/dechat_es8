@@ -15,6 +15,7 @@ let friendWebId;
 let userDataUrl;
 let friendMessages = [];
 let openChat=false;
+let newMessageFound=false;
 
 auth.trackSession(async session => {
   const loggedIn = !!session;
@@ -59,6 +60,7 @@ $("#logout-btn").click(() => {
 });
 
 function seeChatScreen() {
+	$("#footer").hide();
 	$("#principalScreen").hide(); 
     $("#chatScreen").show();
 }
@@ -114,7 +116,7 @@ async function checkForNotificationsPublic() {
   const psFriendname = (await core.getFormattedName(friendWebId)).replace(/ /g,"%20");
   var updates = await core.checkUserForUpdates(await core.getUrl(userWebId, "public/")+"/chat_"+psFriendname);
   updates.forEach(async (fileurl) => {   
-      let message = await messageManager.getNewMessage(fileurl,"/public/chat_"+await psFriendname+"/", dataSync);
+      let message = await core.getNewMessage(fileurl,"/public/chat_"+await psFriendname+"/", dataSync);
       console.log(message);
       if (message) {
       newMessageFound = true;

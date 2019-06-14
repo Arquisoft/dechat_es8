@@ -7,38 +7,41 @@ const Q = require('q')
  * @returns {Promise}: a promise that resolve with the corresponding RDFJSSource
  */
 function fromUrl(url, fetch) {
-  const deferred = Q.defer();
+  const deferred = Q.defer()
 
   fetch(url)
-    .then(res => {
+    .then(async res => {
       if (res.status === 404) {
-        deferred.reject(404);
+        deferred.reject(404)
       } else {
-        const body = res.text();
-        const store = N3.Store();
-        const parser = N3.Parser({baseIRI: url});
+        const body = await res.text()
+		const store= new N3.Store()
+        const parser = new N3.Parser({
+          baseIRI: res.url+'#me'
+        })
 
         parser.parse(body, (err, quad, prefixes) => {
           if (err) {
-            deferred.reject();
+            deferred.reject()
           } else if (quad) {
-            store.addQuad(quad);
+            store.addQuad(quad)
           } else {
             const source = {
               match: function (s, p, o, g) {
-                return require("streamify-array")(store.getQuads(s, p, o, g));
+                return require('streamify-array')(store.getQuads(s, p, o, g))
               }
-            };
+            }
 
-            deferred.resolve(source);
+            deferred.resolve(source)
           }
-        });
+        })
       }
     }).catch(reason => {
-    deferred.resolve(null);
-  });
+      console.warn(`No RDFJSSource was created for ${url} . File already deleted?`)
+      deferred.resolve(null)
+    })
 
-  return deferred.promise;
+  return deferred.promise
 }
 
 

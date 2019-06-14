@@ -3,7 +3,7 @@ const namespaces = require("./namespaces");
 const Q = require("q");
 //Sirve para hacer consultas SPARQL
 const newEngine = require("@comunica/actor-init-sparql-rdfjs").newEngine;
-const rdfjsSourceFromUrl = require("./rdfjssourcefactory").fromUrl;
+const rdfjsSourceFromUrl = require('./rdfjssourcefactory').fromUrl
 //Librería para trabajar con URLs
 const URI = require("uri-js");
 //Sirve para manejar archivos en almacenes Solid
@@ -52,7 +52,7 @@ class DeChatCore {
   
   async getObjectFromPredicateForResource(url, predicate) {
     const deferred = Q.defer()
-    const rdfjsSource = await rdfjsSourceFromUrl(url, this.fetch)
+    const rdfjsSource = await rdfjsSourceFromUrl(url, this.fetch);
 
     if (rdfjsSource) {
       const engine = newEngine()
@@ -64,16 +64,16 @@ class DeChatCore {
           type: 'rdfjsSource',
           value: rdfjsSource
         }]
-      }).then(function (result) {
-          result.bindingsStream.on('data', function (data) {
-            data = data.toObject()
+      })
+		.then(function (result) {
+			result.bindingsStream.on('data', function (data) {
+				data = data.toObject();
+				deferred.resolve(data['?o'])
+			})
 
-            deferred.resolve(data['?o'])
-          })
-
-          result.bindingsStream.on('end', function () {
-            deferred.resolve(null)
-          })
+			result.bindingsStream.on('end', function () {
+				deferred.resolve(null)
+			})
         })
     } else {
       deferred.resolve(null)
@@ -86,6 +86,7 @@ class DeChatCore {
     const deferred = Q.defer();
     const newResources = [];
     const engine = newEngine();
+	const self=this;
     const rdfjsSource = await rdfjsSourceFromUrl(inboxUrl, this.fetch);   
     engine.query(`SELECT ?resource {
       ?resource a <http://www.w3.org/ns/ldp#Resource>.
@@ -97,9 +98,9 @@ class DeChatCore {
 
           const resource = data['?resource'].value;
 
-          if (alreadyCheckedResources.indexOf(resource) === -1) {
+          if (self.alreadyCheckedResources.indexOf(resource) === -1) {
             newResources.push(resource);
-            alreadyCheckedResources.push(resource);
+            self.alreadyCheckedResources.push(resource);
           }
         });
 
@@ -183,6 +184,59 @@ class DeChatCore {
       return url;
     }
   }
+  
+  async getNewMessage(fileurl,where) {
+		const deferred = Q.defer();
+		const rdfjsSource = await rdfjsSourceFromUrl(fileurl, this.fetch);
+
+		if (rdfjsSource) {
+			const engine = newEngine();
+			let messageFound = false;
+
+			engine.query(`SELECT * {
+				?message a <${namespaces.schema}Message>;
+					<${namespaces.schema}givenName> ?username;
+					<${namespaces.schema}friendName> ?friendname;
+					<${namespaces.schema}date> ?date;
+					<${namespaces.schema}text> ?msgtext.
+			}`, {
+					sources: [{
+						type: "rdfjsSource",
+						value: rdfjsSource
+					}]
+				})
+				.then(function (result) {
+					result.bindingsStream.on("data", async function (result) {
+						messageFound = true;
+						result = result.toObject();
+						const messageUrl = result["?message"].value;
+						const messageTx = result["?msgtext"].value.split(where)[1].replace(/U\+0020/g, " ");
+						const author = result["?username"].value.replace(/U\+0020/g, " ");
+						const date = result["?date"].value.replace(/U\+0020/g, " ");
+						const friend = result["?friendname"].value.replace(/U\+0020/g, " ");
+						const inboxUrl = fileurl;
+						deferred.resolve({
+							inboxUrl,
+							messageTx,
+							messageUrl,
+							author,
+							friend,
+							date
+						});
+					});
+
+					result.bindingsStream.on("end", function () {
+						if (!messageFound) {
+							deferred.resolve(null);
+						}
+					});
+				});
+		} else {
+			deferred.resolve(null);
+		}
+
+		return deferred.promise;
+	}
   
 }
 module.exports = DeChatCore
