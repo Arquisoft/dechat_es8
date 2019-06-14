@@ -103,6 +103,15 @@
       <div class="small text-center text-muted">Dechat by Cristian Lado González</div>
     </div>
   </footer>
+  
+  <script>
+	document.getElementById("message").addEventListener("keyup", function(event) {
+		if (event.keyCode === 13) {
+			// Trigger the button element with a click
+			document.getElementById("write-chat").click();
+		}
+	});
+  </script>
 
   <!-- Custom scripts for this template -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/json3/3.3.2/json3.js"></script>
