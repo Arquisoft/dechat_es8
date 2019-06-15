@@ -1,0 +1,10 @@
+{
+  "simulation": "dechat.TestSimulation",
+  "simulationId": "testsimulation",
+  "start": 1560584980178,
+  "description": "testDeChat",
+  "scenarios": ["TestSimulation"],
+  "assertions": [
+
+  ]
+}
