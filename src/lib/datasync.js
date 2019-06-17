@@ -1,3 +1,5 @@
+'use strict'
+
 const URI = require('uri-js')
 
 /**
@@ -9,8 +11,6 @@ class DataSync {
    */
   constructor(fetch) {
     this.fetch = fetch;
-
-    //this._setUpListeningForChangesOfInbox();
   }
 
   /**
@@ -22,7 +22,7 @@ class DataSync {
     return this.fetch(url, {
       method: 'PUT',
       body: ''
-    });
+    }).catch(reason => {console.log(reason);});
   }
 
   /**

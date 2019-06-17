@@ -1,3 +1,5 @@
+'use strict'
+
 const N3 = require('n3')
 const Q = require('q')
 
