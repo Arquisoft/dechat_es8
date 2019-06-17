@@ -17,6 +17,10 @@ describe("core test", function () {
 		core.getFormattedName("https://cristiansoyyo.solid.community/profile/card#me").then(r=>{assert(r, "Cristian_soy_yo");});
 	});
 	
+	it("name of a fail url", function() {
+		rdf.fromUrl("hola",core.fetch).then(r=>{assert(r, null);});
+	});
+	
 	it("getObjectFromPredicateForResource", function() {
 		core.getObjectFromPredicateForResource("https://cristiansoyyo.solid.community/profile/card#me",namespaces.test);
 	});
