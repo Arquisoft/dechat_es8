@@ -151,8 +151,7 @@ class DeChatCore {
 	  `;
         
 		try {
-		//	await dataSync.executeSPARQLUpdateForUser(userDataUrl, `INSERT DATA {${sparqlUpdate}}`);
-		await dataSync.sendToFriendsInbox(await userDataUrl, sparqlUpdate);
+			await dataSync.sendToFriendsInbox(await userDataUrl, sparqlUpdate);
 		} catch (e) {
 			console.err("Could not save new message.");
 		}
@@ -160,7 +159,7 @@ class DeChatCore {
 		if (toSend) {
 			try {
                 await dataSync.sendToFriendsInbox(await this.getUrl(friendWebId, "inbox/"), sparqlUpdate);
-                
+                return true;
 			} catch (e) {
 				console.err("Could not send message to friend.");
 			}
