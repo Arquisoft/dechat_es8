@@ -52,7 +52,7 @@ Este último comando dará algunas direcciones IP donde estará disponible la ap
 == Test
 
 Hay algunas pruebas unitarias en:
- https://github.com/Arquisoft/dechat_es8/tree/master/src/test[src/test].
+ https://github.com/Arquisoft/dechat_es8/tree/master/test[test].
 
 También hay algunas BDD realizadas con
  https://cucumber.io/[Cucumber].
