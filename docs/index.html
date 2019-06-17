@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="author" content="Cristian Lado González">
+
+  <title>DeChat</title>
+
+  <link href="node_modules/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
+
+  <!-- CSS -->
+  <link href="css/main.css" rel="stylesheet" type="text/css">
+  <link href="css/my_css.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+<div id="principalScreen">
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+    <div class="container">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto my-2 my-lg-0">
+        <li class="nav-item">
+            <button class="btn js-scroll-trigger" id="login-btn">Login</button>
+        </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="masthead" id="home">
+    <div class="container h-100">
+      <div class="row h-100 align-items-center justify-content-center text-center">
+        <div class="col-lg-10 align-self-end">
+          <img src="icon.png" alt="DeChates8" height="300" width="600">
+        </div>
+      </div>
+    </div>
+  </header>
+    
+</div>
+    
+    <div id="chatScreen" style="display: none;">
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+    <div class="container">
+        <span><img src="icon.png" alt="DeChates8" height="65" width="165"></span>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto my-2 my-lg-0">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" id="logout-btn" href="#">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="masthead">
+    <div class="row justify-content-center">
+      <div id="new-chat-options">
+          <div class="row justify-content-center"><h3><span class="badge badge-primary">Friends</span></h3></div>
+    <div class="list-group" id="friends">
+
+    </div>
+    </div>
+
+        <div id="chat">
+            <div class="row justify-content-center"><h2><span id="friend-name" class="badge badge-primary"></span></h2></div>
+          <div class="container" id="chat-area" style="width: 400px">
+              <div id="conver">
+              
+              </div>
+              <div class="input-group mb-3">
+                <input type="text" class="form-control rounded-0" id="message" placeholder="Type message...">
+                <div class="input-group-append">
+                <button id="write-chat" class="btn btn-primary" type="button"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+            width="20" height="20"
+            viewBox="0 0 224 224"
+            style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,224v-224h224v224z" fill="none"></path><g fill="#ffffff"><g id="surface1"><path d="M0,17.23077v73.23077l129.23077,21.53846l-129.23077,21.53846v73.23077l224,-94.76923z"></path></g></g></g></svg></button>
+                </div>
+            </div>            
+        </div>
+            
+        </div>
+    </div>
+
+
+  </header>
+    
+    </div>
+
+  <footer id="footer" class="bg-light py-5">
+    <div class="container">
+      <div class="small text-center text-muted">Dechat by Cristian Lado González</div>
+    </div>
+  </footer>
+  
+  <script>
+	document.getElementById("message").addEventListener("keyup", function(event) {
+		if (event.keyCode === 13) {
+			// Trigger the button element with a click
+			document.getElementById("write-chat").click();
+		}
+	});
+  </script>
+
+  <!-- Custom scripts for this template -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/json3/3.3.2/json3.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    
+  <script src="main/dist/main.js"></script>
+    
+</body>
+
+</html>

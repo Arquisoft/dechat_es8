@@ -1,0 +1,25 @@
+#conver {
+    box-sizing: content-box;
+    width: 550px;
+    height: 400px;
+    min-height: 100px;
+    min-width: 550px;
+    padding:1em;
+    border: 1px solid #6f42c1;
+    border-radius: 0em;
+    overflow-y: auto;
+	background-image: url("solid.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-color: purple;
+}
+
+#left{
+    text-align: left;
+	max-width: 550px;
+}
+
+#right{
+    text-align: right;
+	max-width: 550px;
+}
