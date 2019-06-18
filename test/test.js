@@ -43,8 +43,8 @@ describe("core test", function () {
 	});
 	
 	it("storeMessage", function() {
-        let result=core.storeMessage("https://alejandrosanz.solid.community/public/chat_Malu","Alejandro","Muy buenas","https://malu.solid.community/inbox",
-			datasync, true);    
+        let result=core.storeMessage("https://cristiansoyyo.solid.community/public/chat_Hulio","Cristian_soy_yo","Muy buenas",
+			"https://hulio.solid.community/profile/card#me",datasync, true);    
         assert(result, true);
     });
 	
@@ -53,7 +53,7 @@ describe("core test", function () {
 	});
 	
 	it("getNewMessage", function() {
-        let r=core.getNewMessage("https://alejandrosanz.solid.community/inbox/14532d20-594d-11e9-b3ac-bb6f656d2471.txt", "/inbox/");
-        assert(r, null);
+        let r=core.getNewMessage("https://hulio.solid.community/inbox/f9a617f0-9194-11e9-8ec1-dfd1f81cd905", "inbox/");
+        assert.equal(r.resolves, undefined);
 	});
 });
