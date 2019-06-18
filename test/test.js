@@ -57,3 +57,16 @@ describe("core test", function () {
         assert.equal(r.resolves, undefined);
 	});
 });
+
+describe("dataSync tests", function () {
+	it("createEmptyFileForUser", function () {
+		datasync.createEmptyFileForUser("https://cristiansoyyo.solid.community/inbox/testCreateEmptyFile.txt").then(r=>{assert(r.url,
+		"https://cristiansoyyo.solid.community/inbox/testCreateEmptyFile.txt");});
+	});
+    
+	it("deleteFileForUser", function () {
+		datasync.deleteFileForUser("https://cristiansoyyo.solid.community/inbox/testCreateEmptyFile.txt").then(r=>{assert(r.url,
+		"https://cristiansoyyo.solid.community/inbox/testCreateEmptyFile.txt");});
+	});
+
+});
