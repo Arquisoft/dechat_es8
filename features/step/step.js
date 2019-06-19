@@ -69,4 +69,45 @@ module.exports = function () {
         return driver.findElement(by.xpath("//*[@id='login-btn']"));
     });
 	
+	//Test send a message
+    this.Given(/^a "([^"]*)" with a "([^"]*)" that wants to talk with a friend$/, function (user,psswd) {
+        var parent = driver.getWindowHandle();
+        return helpers.loadPage("https://arquisoft.github.io/dechat_es8/")
+            .then(()=> {
+                    return driver.findElement(by.xpath("//*[@id='login-btn']")).click()
+                        .then(() => {
+                            return driver.getAllWindowHandles().then(function gotWindowHandles(allhandles) {
+                                driver.switchTo().window(allhandles[allhandles.length - 1]);
+                                return driver.findElement(by.xpath("/html/body/div/div/div/button[2]")).click()
+                                    .then(() => {
+                                        driver.wait(until.elementsLocated(by.name("username")), 20000);
+                                        driver.findElement(By.name("username")).sendKeys(user); 
+                                        driver.findElement(By.name("password")).sendKeys(psswd); 
+                                        return driver.findElement(by.xpath("//*[@id='login']")).click().then(() => {
+                                            driver.switchTo().window(parent);                                           
+                                            return driver.wait(until.elementsLocated(by.xpath("//*[@id='friend0']")), 20000);
+                                        })
+                                })
+                            });
+                    })
+                })
+    });
+    
+    this.Then(/^the message is sent$/,function (){
+			return driver.wait(until.elementsLocated(by.xpath("//*[@id='friend0']")), 200)
+				.then(() => {
+					return driver.findElement(by.xpath("//*[@id='friend0']")).click()
+						.then(()=> {
+							return driver.wait(until.elementsLocated(by.xpath("//*[@id='friend-name']")), 200)
+								.then(()=> {
+									return driver.findElement(by.xpath("//*[@id='message']")).sendKeys("Message test")
+										.then(()=> {
+											driver.findElement(by.xpath("//*[@id='write-chat']")).click();
+											return driver.wait(until.elementsLocated(by.xpath("//*[@id='right']")), 200);
+										})
+								});
+					});
+				});
+    });
+	
 };

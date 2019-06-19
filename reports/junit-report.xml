@@ -5,19 +5,9 @@
             <property name="URI" value="C:/Users/Cristian/Desktop/hulio/features/login_existing_user.feature">
             </property>
         </properties>
-        <testcase name="Given &quot;testdechat6a1&quot; with password &quot;Dechat_es6a1&quot;" classname="login-at-the-system;testdechat6a1-is-an-user" time="13.2682827">
+        <testcase name="Given &quot;testdechat6a1&quot; with password &quot;Dechat_es6a1&quot;" classname="login-at-the-system;testdechat6a1-is-an-user" time="11.310830501">
         </testcase>
-        <testcase name="Then the login is success" classname="login-at-the-system;testdechat6a1-is-an-user" time="0.2584026">
-        </testcase>
-    </testsuite>
-    <testsuite name="login-at-the-system;testdechat6a1-is-an-user" tests="2" failures="0" skipped="0">
-        <properties>
-            <property name="URI" value="C:/Users/Cristian/Desktop/hulio/features/login_existing_user.feature">
-            </property>
-        </properties>
-        <testcase name="Given &quot;testdechat6a1&quot; with password &quot;hello&quot;" classname="login-at-the-system;testdechat6a1-is-an-user" time="15.1472535">
-        </testcase>
-        <testcase name="Then the login is success" classname="login-at-the-system;testdechat6a1-is-an-user" time="0.0086198">
+        <testcase name="Then the login is success" classname="login-at-the-system;testdechat6a1-is-an-user" time="0.2591278">
         </testcase>
     </testsuite>
     <testsuite name="logout-at-the-system;testdechat6a1-is-an-user" tests="2" failures="0" skipped="0">
@@ -25,9 +15,19 @@
             <property name="URI" value="C:/Users/Cristian/Desktop/hulio/features/logout_existing_user.feature">
             </property>
         </properties>
-        <testcase name="Given &quot;testdechat6a1&quot; with password &quot;Dechat_es6a1&quot;, the user make login and log out" classname="logout-at-the-system;testdechat6a1-is-an-user" time="13.3996274">
+        <testcase name="Given &quot;testdechat6a1&quot; with password &quot;Dechat_es6a1&quot;, the user make login and log out" classname="logout-at-the-system;testdechat6a1-is-an-user" time="12.7960728">
         </testcase>
-        <testcase name="Then the chat is shown" classname="logout-at-the-system;testdechat6a1-is-an-user" time="0.325732299">
+        <testcase name="Then the first screen is shown" classname="logout-at-the-system;testdechat6a1-is-an-user" time="0.331451">
+        </testcase>
+    </testsuite>
+    <testsuite name="send-a-message;send-a-message-to-a-friend" tests="2" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="C:/Users/Cristian/Desktop/hulio/features/send_message.feature">
+            </property>
+        </properties>
+        <testcase name="Given a &quot;testdechat6a1&quot; with a &quot;Dechat_es6a1&quot; that wants to talk with a friend" classname="send-a-message;send-a-message-to-a-friend" time="14.1038589">
+        </testcase>
+        <testcase name="Then the message is sent" classname="send-a-message;send-a-message-to-a-friend" time="0.6394334">
         </testcase>
     </testsuite>
 </testsuites>

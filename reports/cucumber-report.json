@@ -14,7 +14,7 @@
             "name": "\"testdechat6a1\" with password \"Dechat_es6a1\"",
             "result": {
               "status": "passed",
-              "duration": 13268282700
+              "duration": 11310830501
             },
             "line": 5,
             "match": {
@@ -27,7 +27,7 @@
             "name": "the login is success",
             "result": {
               "status": "passed",
-              "duration": 258402600
+              "duration": 259127800
             },
             "line": 6,
             "match": {
@@ -39,55 +39,7 @@
             "keyword": "After ",
             "result": {
               "status": "passed",
-              "duration": 41401700
-            },
-            "hidden": true,
-            "match": {
-              "location": "C:\\Users\\Cristian\\Desktop\\hulio\\node_modules\\selenium-cucumber-js\\runtime\\world.js:250"
-            }
-          }
-        ],
-        "tags": [],
-        "type": "scenario"
-      },
-      {
-        "id": "login-at-the-system;testdechat6a1-is-an-user",
-        "keyword": "Scenario",
-        "line": 11,
-        "name": "testdechat6a1 is an user",
-        "steps": [
-          {
-            "arguments": [],
-            "keyword": "Given ",
-            "name": "\"testdechat6a1\" with password \"hello\"",
-            "result": {
-              "status": "passed",
-              "duration": 15147253500
-            },
-            "line": 5,
-            "match": {
-              "location": "C:\\Users\\Cristian\\Desktop\\hulio\\features\\step\\step.js:10"
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Then ",
-            "name": "the login is success",
-            "result": {
-              "status": "passed",
-              "duration": 8619800
-            },
-            "line": 6,
-            "match": {
-              "location": "C:\\Users\\Cristian\\Desktop\\hulio\\features\\step\\step.js:36"
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "After ",
-            "result": {
-              "status": "passed",
-              "duration": 28229900
+              "duration": 44016600
             },
             "hidden": true,
             "match": {
@@ -121,7 +73,7 @@
             "name": "\"testdechat6a1\" with password \"Dechat_es6a1\", the user make login and log out",
             "result": {
               "status": "passed",
-              "duration": 13399627400
+              "duration": 12796072800
             },
             "line": 5,
             "match": {
@@ -131,10 +83,10 @@
           {
             "arguments": [],
             "keyword": "Then ",
-            "name": "the chat is shown",
+            "name": "the first screen is shown",
             "result": {
               "status": "passed",
-              "duration": 325732299
+              "duration": 331451000
             },
             "line": 6,
             "match": {
@@ -146,7 +98,7 @@
             "keyword": "After ",
             "result": {
               "status": "passed",
-              "duration": 42919500
+              "duration": 38036800
             },
             "hidden": true,
             "match": {
@@ -164,5 +116,63 @@
     "name": "Logout at the system",
     "tags": [],
     "uri": "C:/Users/Cristian/Desktop/hulio/features/logout_existing_user.feature"
+  },
+  {
+    "elements": [
+      {
+        "id": "send-a-message;send-a-message-to-a-friend",
+        "keyword": "Scenario",
+        "line": 9,
+        "name": "Send a message to a friend",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "name": "a \"testdechat6a1\" with a \"Dechat_es6a1\" that wants to talk with a friend",
+            "result": {
+              "status": "passed",
+              "duration": 14103858900
+            },
+            "line": 4,
+            "match": {
+              "location": "C:\\Users\\Cristian\\Desktop\\hulio\\features\\step\\step.js:73"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "name": "the message is sent",
+            "result": {
+              "status": "passed",
+              "duration": 639433400
+            },
+            "line": 5,
+            "match": {
+              "location": "C:\\Users\\Cristian\\Desktop\\hulio\\features\\step\\step.js:96"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "After ",
+            "result": {
+              "status": "passed",
+              "duration": 2593987400
+            },
+            "hidden": true,
+            "match": {
+              "location": "C:\\Users\\Cristian\\Desktop\\hulio\\node_modules\\selenium-cucumber-js\\runtime\\world.js:250"
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "send-a-message",
+    "keyword": "Feature",
+    "line": 1,
+    "name": "Send a message",
+    "tags": [],
+    "uri": "C:/Users/Cristian/Desktop/hulio/features/send_message.feature"
   }
 ]
