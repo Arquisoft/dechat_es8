@@ -14,7 +14,7 @@
             "name": "\"testdechat6a1\" with password \"Dechat_es6a1\"",
             "result": {
               "status": "passed",
-              "duration": 13579253700
+              "duration": 13268282700
             },
             "line": 5,
             "match": {
@@ -27,7 +27,7 @@
             "name": "the login is success",
             "result": {
               "status": "passed",
-              "duration": 248931899
+              "duration": 258402600
             },
             "line": 6,
             "match": {
@@ -39,7 +39,7 @@
             "keyword": "After ",
             "result": {
               "status": "passed",
-              "duration": 42659499
+              "duration": 41401700
             },
             "hidden": true,
             "match": {
@@ -62,7 +62,7 @@
             "name": "\"testdechat6a1\" with password \"hello\"",
             "result": {
               "status": "passed",
-              "duration": 14708673600
+              "duration": 15147253500
             },
             "line": 5,
             "match": {
@@ -75,7 +75,7 @@
             "name": "the login is success",
             "result": {
               "status": "passed",
-              "duration": 6121399
+              "duration": 8619800
             },
             "line": 6,
             "match": {
@@ -87,7 +87,7 @@
             "keyword": "After ",
             "result": {
               "status": "passed",
-              "duration": 31239700
+              "duration": 28229900
             },
             "hidden": true,
             "match": {
@@ -105,5 +105,64 @@
     "name": "Login at the system",
     "tags": [],
     "uri": "C:/Users/Cristian/Desktop/hulio/features/login_existing_user.feature"
+  },
+  {
+    "description": "\tLogin with an existing user",
+    "elements": [
+      {
+        "id": "logout-at-the-system;testdechat6a1-is-an-user",
+        "keyword": "Scenario",
+        "line": 10,
+        "name": "testdechat6a1 is an user",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "name": "\"testdechat6a1\" with password \"Dechat_es6a1\", the user make login and log out",
+            "result": {
+              "status": "passed",
+              "duration": 13399627400
+            },
+            "line": 5,
+            "match": {
+              "location": "C:\\Users\\Cristian\\Desktop\\hulio\\features\\step\\step.js:41"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "name": "the chat is shown",
+            "result": {
+              "status": "passed",
+              "duration": 325732299
+            },
+            "line": 6,
+            "match": {
+              "location": "C:\\Users\\Cristian\\Desktop\\hulio\\features\\step\\step.js:67"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "After ",
+            "result": {
+              "status": "passed",
+              "duration": 42919500
+            },
+            "hidden": true,
+            "match": {
+              "location": "C:\\Users\\Cristian\\Desktop\\hulio\\node_modules\\selenium-cucumber-js\\runtime\\world.js:250"
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "logout-at-the-system",
+    "keyword": "Feature",
+    "line": 1,
+    "name": "Logout at the system",
+    "tags": [],
+    "uri": "C:/Users/Cristian/Desktop/hulio/features/logout_existing_user.feature"
   }
 ]

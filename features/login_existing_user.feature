@@ -8,4 +8,3 @@ Feature: Login at the system
     Examples:
       | user | psswd |
 	  | testdechat6a1 | Dechat_es6a1 |
-	  | testdechat6a1 | hello |

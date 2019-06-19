@@ -5,9 +5,9 @@
             <property name="URI" value="C:/Users/Cristian/Desktop/hulio/features/login_existing_user.feature">
             </property>
         </properties>
-        <testcase name="Given &quot;testdechat6a1&quot; with password &quot;Dechat_es6a1&quot;" classname="login-at-the-system;testdechat6a1-is-an-user" time="13.5792537">
+        <testcase name="Given &quot;testdechat6a1&quot; with password &quot;Dechat_es6a1&quot;" classname="login-at-the-system;testdechat6a1-is-an-user" time="13.2682827">
         </testcase>
-        <testcase name="Then the login is success" classname="login-at-the-system;testdechat6a1-is-an-user" time="0.248931899">
+        <testcase name="Then the login is success" classname="login-at-the-system;testdechat6a1-is-an-user" time="0.2584026">
         </testcase>
     </testsuite>
     <testsuite name="login-at-the-system;testdechat6a1-is-an-user" tests="2" failures="0" skipped="0">
@@ -15,9 +15,19 @@
             <property name="URI" value="C:/Users/Cristian/Desktop/hulio/features/login_existing_user.feature">
             </property>
         </properties>
-        <testcase name="Given &quot;testdechat6a1&quot; with password &quot;hello&quot;" classname="login-at-the-system;testdechat6a1-is-an-user" time="14.7086736">
+        <testcase name="Given &quot;testdechat6a1&quot; with password &quot;hello&quot;" classname="login-at-the-system;testdechat6a1-is-an-user" time="15.1472535">
         </testcase>
-        <testcase name="Then the login is success" classname="login-at-the-system;testdechat6a1-is-an-user" time="0.006121399">
+        <testcase name="Then the login is success" classname="login-at-the-system;testdechat6a1-is-an-user" time="0.0086198">
+        </testcase>
+    </testsuite>
+    <testsuite name="logout-at-the-system;testdechat6a1-is-an-user" tests="2" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="C:/Users/Cristian/Desktop/hulio/features/logout_existing_user.feature">
+            </property>
+        </properties>
+        <testcase name="Given &quot;testdechat6a1&quot; with password &quot;Dechat_es6a1&quot;, the user make login and log out" classname="logout-at-the-system;testdechat6a1-is-an-user" time="13.3996274">
+        </testcase>
+        <testcase name="Then the chat is shown" classname="logout-at-the-system;testdechat6a1-is-an-user" time="0.325732299">
         </testcase>
     </testsuite>
 </testsuites>
