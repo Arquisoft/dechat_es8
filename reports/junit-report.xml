@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+    <testsuite name="login-at-the-system;testdechat6a1-is-an-user" tests="2" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="C:/Users/Cristian/Desktop/hulio/features/login_existing_user.feature">
+            </property>
+        </properties>
+        <testcase name="Given &quot;testdechat6a1&quot; with password &quot;Dechat_es6a1&quot;" classname="login-at-the-system;testdechat6a1-is-an-user" time="13.5792537">
+        </testcase>
+        <testcase name="Then the login is success" classname="login-at-the-system;testdechat6a1-is-an-user" time="0.248931899">
+        </testcase>
+    </testsuite>
+    <testsuite name="login-at-the-system;testdechat6a1-is-an-user" tests="2" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="C:/Users/Cristian/Desktop/hulio/features/login_existing_user.feature">
+            </property>
+        </properties>
+        <testcase name="Given &quot;testdechat6a1&quot; with password &quot;hello&quot;" classname="login-at-the-system;testdechat6a1-is-an-user" time="14.7086736">
+        </testcase>
+        <testcase name="Then the login is success" classname="login-at-the-system;testdechat6a1-is-an-user" time="0.006121399">
+        </testcase>
+    </testsuite>
+</testsuites>

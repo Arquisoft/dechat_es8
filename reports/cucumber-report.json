@@ -1,0 +1,109 @@
+[
+  {
+    "description": "  Login with an existing user",
+    "elements": [
+      {
+        "id": "login-at-the-system;testdechat6a1-is-an-user",
+        "keyword": "Scenario",
+        "line": 10,
+        "name": "testdechat6a1 is an user",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "name": "\"testdechat6a1\" with password \"Dechat_es6a1\"",
+            "result": {
+              "status": "passed",
+              "duration": 13579253700
+            },
+            "line": 5,
+            "match": {
+              "location": "C:\\Users\\Cristian\\Desktop\\hulio\\features\\step\\step.js:10"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "name": "the login is success",
+            "result": {
+              "status": "passed",
+              "duration": 248931899
+            },
+            "line": 6,
+            "match": {
+              "location": "C:\\Users\\Cristian\\Desktop\\hulio\\features\\step\\step.js:36"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "After ",
+            "result": {
+              "status": "passed",
+              "duration": 42659499
+            },
+            "hidden": true,
+            "match": {
+              "location": "C:\\Users\\Cristian\\Desktop\\hulio\\node_modules\\selenium-cucumber-js\\runtime\\world.js:250"
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "id": "login-at-the-system;testdechat6a1-is-an-user",
+        "keyword": "Scenario",
+        "line": 11,
+        "name": "testdechat6a1 is an user",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "name": "\"testdechat6a1\" with password \"hello\"",
+            "result": {
+              "status": "passed",
+              "duration": 14708673600
+            },
+            "line": 5,
+            "match": {
+              "location": "C:\\Users\\Cristian\\Desktop\\hulio\\features\\step\\step.js:10"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "name": "the login is success",
+            "result": {
+              "status": "passed",
+              "duration": 6121399
+            },
+            "line": 6,
+            "match": {
+              "location": "C:\\Users\\Cristian\\Desktop\\hulio\\features\\step\\step.js:36"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "After ",
+            "result": {
+              "status": "passed",
+              "duration": 31239700
+            },
+            "hidden": true,
+            "match": {
+              "location": "C:\\Users\\Cristian\\Desktop\\hulio\\node_modules\\selenium-cucumber-js\\runtime\\world.js:250"
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "login-at-the-system",
+    "keyword": "Feature",
+    "line": 1,
+    "name": "Login at the system",
+    "tags": [],
+    "uri": "C:/Users/Cristian/Desktop/hulio/features/login_existing_user.feature"
+  }
+]
