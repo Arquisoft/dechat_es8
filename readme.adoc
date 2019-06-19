@@ -57,8 +57,18 @@ Hay algunas pruebas unitarias en:
 También hay algunas BDD realizadas con
  https://cucumber.io/[Cucumber].
 
-Para lanzar los tests se debe realizars:
+Para lanzar los tests de integración continua se debe realizar:
 
 ----
 npm test
 ----
+
+Para probar las historias de usuario con Cucumber se debe realizar:
+
+----
+npm run cucumber
+----
+
+Por último existen pruebas de carga realizadas con
+ https://gatling.io/[Gatling].
+Los resultados de estas pruebas están en https://github.com/Arquisoft/dechat_es8/tree/master/gatling[gatling].
