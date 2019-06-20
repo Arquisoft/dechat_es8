@@ -545,6 +545,10 @@ For documentation of your own system you use better the <em>plain</em> version.<
 <td class="tableblock halign-left valign-top"><p class="tableblock">The application will be separated from the data storage, and the users data will be stored in their own <a href="https://solid.inrupt.com/how-it-works">PODs</a>.</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Text messages</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An user can send text messages to a friend.</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Multimedia messages</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Accompanying text messages, the app will allow users to send photos and videos.</p></td>
 </tr>
@@ -558,6 +562,9 @@ For documentation of your own system you use better the <em>plain</em> version.<
 </tr>
 </tbody>
 </table>
+<div class="paragraph">
+<p>At this time the last three requirements are not developed.</p>
+</div>
 </div>
 </div>
 </div>
@@ -575,30 +582,22 @@ For documentation of your own system you use better the <em>plain</em> version.<
 <tr>
 <th class="tableblock halign-left valign-top"><strong>Goal</strong></th>
 <th class="tableblock halign-left valign-top"><strong>Description</strong></th>
-<th class="tableblock halign-left valign-top"><strong>Priority</strong></th>
+<th class="tableblock halign-left valign-top">Efficiency</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Efficiency</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Messages will be sent instantly to ensure smooth communication.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">High, high</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Security</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Only the members of a chat can see the messages of it.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">High, medium</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Usability</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The application must be easy for non-technical people</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">High, medium</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The application must be easy for non-technical people.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Maintainability</p></td>
 </tr>
 </tbody>
 </table>
-<div class="paragraph">
-<p>The two values indicated in the priority mean, respectively, how important it is to success, and how difficult it is to achieve.</p>
-</div>
 </div>
 </div>
 </div>
@@ -691,11 +690,11 @@ For documentation of your own system you use better the <em>plain</em> version.<
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Software development through GitHub.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A GitHub repository (dechat_es6a) must be used in order to keep the development updated and available to all participants at any time.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A GitHub repository (dechat_es8) must be used in order to keep the development updated and available to all participants at any time.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Time</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">There is limited time to complete the project. There are several checkpoints to be reached, with closure at 30th April; final version of documentation and prototype must be completed by this date.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">There is limited time to complete the project. There are several checkpoints to be reached, with closure at 1st July; final version of documentation and prototype must be completed by this date.</p></td>
 </tr>
 </tbody>
 </table>
@@ -715,6 +714,10 @@ For documentation of your own system you use better the <em>plain</em> version.<
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Arc42 template for documentation.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">As a template for the documentation of the project, we must use Arc42 (<a href="https://arc42.org/" class="bare">https://arc42.org/</a>).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Asciidoc for documentation.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An Asciidoc syntax must be used to make the documentation.</p></td>
 </tr>
 </tbody>
 </table>
@@ -737,11 +740,6 @@ Our system scope is the implementation and testing of a descentralized chat usin
 </div>
 <div class="sect2">
 <h3 id="_business_context">3.1. Business Context</h3>
-<div class="sidebarblock">
-<div class="content">
-
-</div>
-</div>
 <div class="paragraph">
 <p><strong>Business Context diagram</strong></p>
 </div>
@@ -772,6 +770,9 @@ Our system scope is the implementation and testing of a descentralized chat usin
 <div class="paragraph">
 <p><strong>Technological decisions:</strong></p>
 </div>
+<div class="paragraph">
+<p>We have decided to use Javascript because we have been inspired by the solid-chess project and it is the language that it uses.</p>
+</div>
 </div>
 </div>
 <div class="sidebarblock">
@@ -779,12 +780,8 @@ Our system scope is the implementation and testing of a descentralized chat usin
 <div class="paragraph">
 <p><strong>Decisions about the top-level decomposition of the system:</strong></p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>These types of decisions are no more than decisions about the decomposition of the system at a high level.</p>
-</li>
-</ul>
+<div class="paragraph">
+<p>A functional decomposition is used, in such a way that the modules are separated by their functionality.</p>
 </div>
 </div>
 </div>
@@ -793,12 +790,8 @@ Our system scope is the implementation and testing of a descentralized chat usin
 <div class="paragraph">
 <p><strong>Decisions on the key quality objectives:</strong></p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>This type of decision was made with all the members of the group agreeing.</p>
-</li>
-</ul>
+<div class="paragraph">
+<p>In order to reach the goal of security, a login is included and to make it usable, tests have been done with the final product with people who do not belong to the project.</p>
 </div>
 </div>
 </div>
@@ -807,23 +800,10 @@ Our system scope is the implementation and testing of a descentralized chat usin
 <div class="paragraph">
 <p><strong>Relevant organizational decisions:</strong></p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>In our case, the development process was the one stipulated by the group.</p>
-</li>
-<li>
-<p>Each member of the group had a task, usually in conjunction with other members.</p>
-</li>
-<li>
-<p>The process of development up to now consists of different phases, which have been developed by assignment of tasks.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
 <div class="paragraph">
-<p><strong>"Unfinished document"</strong></p>
+<p>At this moment there is only one developer, so there are no relevant organization decisions.</p>
+</div>
+</div>
 </div>
 <div style="page-break-after: always;"></div>
 </div>

@@ -13,30 +13,24 @@ Let's highlight four fundamental decisions.
 ****
 **Technological decisions:**
 
+We have decided to use Javascript because we have been inspired by the solid-chess project and it is the language that it uses.
 ****
 
 ****
 **Decisions about the top-level decomposition of the system:**
 
-- These types of decisions are no more than decisions about the decomposition of the system at a high level.
+A functional decomposition is used, in such a way that the modules are separated by their functionality.
 ****
 
 ****
 
 **Decisions on the key quality objectives:**
 
-- This type of decision was made with all the members of the group agreeing.
-
+In order to reach the goal of security, a login is included and to make it usable, tests have been done with the final product with people who do not belong to the project.
 ****
 
 ****
 **Relevant organizational decisions:**
 
-- In our case, the development process was the one stipulated by the group.
-
-- Each member of the group had a task, usually in conjunction with other members.
-
-- The process of development up to now consists of different phases, which have been developed by assignment of tasks.
+At this moment there is only one developer, so there are no relevant organization decisions.
 ****
-
-**"Unfinished document"**

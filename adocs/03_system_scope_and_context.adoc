@@ -13,11 +13,6 @@ Our system scope is the implementation and testing of a descentralized chat usin
 
 === Business Context
 
-
-****
-
-****
-
 **Business Context diagram**
 
 image::./BussinesContext.jpg[Bussiness context,800]

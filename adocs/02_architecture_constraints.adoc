@@ -20,10 +20,10 @@
 |Constraint |Explanation 
 
 |Software development through GitHub.
-|A GitHub repository (dechat_es6a) must be used in order to keep the development updated and available to all participants at any time.
+|A GitHub repository (dechat_es8) must be used in order to keep the development updated and available to all participants at any time.
 
 |Time
-|There is limited time to complete the project. There are several checkpoints to be reached, with closure at 30th April; final version of documentation and prototype must be completed by this date.
+|There is limited time to complete the project. There are several checkpoints to be reached, with closure at 1st July; final version of documentation and prototype must be completed by this date.
 
 |===
 
@@ -33,6 +33,9 @@
 
 |Arc42 template for documentation.
 |As a template for the documentation of the project, we must use Arc42 (https://arc42.org/).
+
+|Asciidoc for documentation.
+|An Asciidoc syntax must be used to make the documentation.
 
 |===
 ****
