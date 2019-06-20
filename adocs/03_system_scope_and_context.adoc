@@ -20,4 +20,4 @@ Our system scope is the implementation and testing of a descentralized chat usin
 
 **Business Context diagram**
 
-image::https://raw.githubusercontent.com/Arquisoft/dechat_es6a1/master/docs/images/BussinesContext.jpg[Bussiness context,800]
+image::https://raw.githubusercontent.com/Arquisoft/dechat_es8/master/docs/images/BussinesContext.jpg[Bussiness context,800]
