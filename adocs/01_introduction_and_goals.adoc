@@ -16,10 +16,12 @@ In this document, we are describing relevant requirements of the project, qualit
 |===
 | *Requirement* | *Description*
 | Decentralized arquitecture | The application will be separated from the data storage, and the users data will be stored in their own link:https://solid.inrupt.com/how-it-works[PODs].
+| Text messages | An user can send text messages to a friend.
 | Multimedia messages | Accompanying text messages, the app will allow users to send photos and videos. 
 | Group chats | Users can make a friends group to chat with all the members simoultaneosly.
 | Notifications | The app will send a notification when the user recives a message.
 |===
+At this time the last three requirements are not developed.
 ****
 
 === Quality Goals
@@ -28,12 +30,12 @@ In this document, we are describing relevant requirements of the project, qualit
 ****
 [options="header",cols="1,2,2"]
 |===
-| *Goal* | *Description* | *Priority*
-| Efficiency | Messages will be sent instantly to ensure smooth communication. | High, high
-| Security | Only the members of a chat can see the messages of it. | High, medium
-| Usability | The application must be easy for non-technical people | High, medium
+| *Goal* | *Description*
+| Efficiency | Messages will be sent instantly to ensure smooth communication.
+| Security | Only the members of a chat can see the messages of it.
+| Usability | The application must be easy for non-technical people.
+| Maintainability | The source code should be as clean as possible for better maintainability.
 |===
-The two values indicated in the priority mean, respectively, how important it is to success, and how difficult it is to achieve.
 ****
 
 === Stakeholders
