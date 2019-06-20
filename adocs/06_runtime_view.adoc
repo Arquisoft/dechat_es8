@@ -8,7 +8,7 @@ In this section we will explain the user interaction with dechat
 
 **Graphic representation**
 
-image::https://raw.githubusercontent.com/Arquisoft/dechat_es8/master/docs/images/Runtimeview.jpg[Runtime view,800]
+image::./Runtimeview.jpg[Runtime view,800]
 
 === In details
 

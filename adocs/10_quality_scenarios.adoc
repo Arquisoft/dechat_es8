@@ -17,7 +17,7 @@ Later you can see in depth the quality scenarios.
 ****
 In this section you can see the quality tree (ATAM) with his most important quality attributes and quality scenarios.
 
-image::https://github.com/Arquisoft/dechat_es8/blob/master/adocs/images/QualityTree.png[Quality Tree,800]
+image::./QualityTree.png[Quality Tree,800]
 
 ****
 
