@@ -456,7 +456,11 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_in_details">6.1. In details</a></li>
 </ul>
 </li>
-<li><a href="#section-deployment-view">7. Deployment View</a></li>
+<li><a href="#section-deployment-view">7. Deployment View</a>
+<ul class="sectlevel2">
+<li><a href="#_things_to_keep_in_mind">7.1. Things to keep in mind</a></li>
+</ul>
+</li>
 <li><a href="#section-concepts">8. Cross-cutting Concepts</a>
 <ul class="sectlevel2">
 <li><a href="#_concepts_mind_map">8.1. Concepts Mind Map</a></li>
@@ -874,23 +878,28 @@ Further decisions are required in order to provide any substantial data on this 
 <div class="paragraph">
 <p>This section deals with the technical infrastructure of our system, as well as its basic components.</p>
 </div>
-</div>
-</div>
-<div class="sidebarblock">
-<div class="content">
 <div class="paragraph">
 <p>First of all comment that we are set to work with SOLID as the basis of the project.</p>
 </div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_things_to_keep_in_mind">7.1. Things to keep in mind</h3>
+<div class="sidebarblock">
+<div class="content">
 <div class="paragraph">
-<p>Starting from this base, it was decided to make a web application in javascript since it seemed the best way to approach the project.
-This is because we already knew the language and had several resources of support.</p>
+<p>The user must be logged in to be able to interact with the chat itself.</p>
 </div>
 <div class="paragraph">
-<p>As for the web server in case you have cloned the repository locally, you can execute the http-server command that will provide some ip addresses to execute the application.</p>
+<p>The conversation will be saved in the public directory to prevent a user from having a private directory. This should be improved in the face of other more advanced versions so that nobody who is not authorized can access such conversations.</p>
+</div>
+<div class="paragraph">
+<p>The messages that a person sends are stored in their own POD. To access the messages sent by the other interlocutor, the application searches the POD of the other person, who will have a chat with the person who is using the application. This allows you to follow the SOLID database because if someone wants to delete their own messages, they can do so.</p>
 </div>
 </div>
 </div>
 <div style="page-break-after: always;"></div>
+</div>
 </div>
 </div>
 <div class="sect1">

@@ -5,13 +5,17 @@
 
 ****
 This section deals with the technical infrastructure of our system, as well as its basic components.
-****
 
-****
 First of all comment that we are set to work with SOLID as the basis of the project.
+****
 
-Starting from this base, it was decided to make a web application in javascript since it seemed the best way to approach the project.
-This is because we already knew the language and had several resources of support.
+=== Things to keep in mind
 
-As for the web server in case you have cloned the repository locally, you can execute the http-server command that will provide some ip addresses to execute the application.
+****
+The user must be logged in to be able to interact with the chat itself.
+
+The conversation will be saved in the public directory to prevent a user from having a private directory. This should be improved in the face of other more advanced versions so that nobody who is not authorized can access such conversations.
+
+
+The messages that a person sends are stored in their own POD. To access the messages sent by the other interlocutor, the application searches the POD of the other person, who will have a chat with the person who is using the application. This allows you to follow the SOLID database because if someone wants to delete their own messages, they can do so.
 ****
