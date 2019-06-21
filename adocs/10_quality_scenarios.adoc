@@ -1,8 +1,6 @@
 [[section-quality-scenarios]]
 == Quality Requirements
 
-
-
 ****
 In this document we will talk about the most important and outstanding quality requirements.
 
@@ -30,17 +28,17 @@ In this section you can see a little more in depth the main quality scenarios th
 [options="header",cols="1,2,2,2"]
 |===
 | *Reference* | *AQ* | *Scenario* | *Priority*
-| 1 | Portability | The system must be able to operate on different platforms | High, high
+| 1 | Portability | The system must be able to operate on different platforms and browsers | High, medium
 | 2 | Performance and usability | A user will send and receive messages instantly to ensure smooth communication | High, high
-| 3 | Usability | Facilitate the use and understanding of the system to user | High, medium
-| 4 | Realibility and usability | If an error occurs without too much importance the system should continue working | High, high
-| 5 | Performance | A user can get the search results (from messages, from friends ...) in less than 1.0 seconds | Medium, high
+| 3 | Usability | Facilitate the use and understanding of the system to user | Medium, medium
+| 4 | Realibility and usability | If an error occurs without too much importance the system should continue working | High, medium
+| 5 | Performance | A user can get the search results (from messages, from friends ...) in less than 5.0 seconds | Medium, low
 | 6 | Modifiability | 
 The system must be open 2 hours after having made changes in the algorithms and methods that comprise them, without impairing functionality | High, high
 | 7 | Scalability | The system must be designed so that, if the number of users increases in a short period of time, the availability and performance is not affected | High, low
 | 8 | Scalability | Support for at least "X" mb content | Medium, medium
 | 9 | Availability | The system must be accessible at least 90% of the time | Medium, low
-| 10 | Availability | Messages sent by the user will not be lost, until he deletes them | High, low
+| 10 | Availability | Messages sent by the user will not be lost, until he deletes them | High, medium
 | 11 | Security | An unauthorized intrusion will be reported in less than 60 seconds | High, medium
 | 12 | Security | The system will not allow a user to read messages from a conversation where the user is not included | High, medium
 |===

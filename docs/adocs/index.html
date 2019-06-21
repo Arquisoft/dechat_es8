@@ -467,7 +467,12 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_concepts_detailed">8.2. Concepts Detailed</a></li>
 </ul>
 </li>
-<li><a href="#section-design-decisions">9. Design Decisions</a></li>
+<li><a href="#section-design-decisions">9. Design Decisions</a>
+<ul class="sectlevel2">
+<li><a href="#_language">9.1. Language</a></li>
+<li><a href="#_architecture">9.2. Architecture</a></li>
+</ul>
+</li>
 <li><a href="#section-quality-scenarios">10. Quality Requirements</a>
 <ul class="sectlevel2">
 <li><a href="#_quality_tree">10.1. Quality Tree</a></li>
@@ -952,7 +957,7 @@ Further decisions are required in order to provide any substantial data on this 
 <div class="sidebarblock">
 <div class="content">
 <div class="paragraph">
-<p>Data is stored in each user&#8217;s private POD, so the only way to make it disappear is making the sender delete the message itself.</p>
+<p>Data is stored in each user&#8217;s POD, so the only way to make it disappear is making the sender delete the message itself.</p>
 </div>
 </div>
 </div>
@@ -990,7 +995,7 @@ Further decisions are required in order to provide any substantial data on this 
 <div class="ulist">
 <ul>
 <li>
-<p>Build</p>
+<p>Build :</p>
 </li>
 </ul>
 </div>
@@ -1004,22 +1009,19 @@ Further decisions are required in order to provide any substantial data on this 
 <pre>npm run build:web</pre>
 </div>
 </div>
-<div class="paragraph">
-<p>We also use <strong>http-server ./src</strong> for the deployment of the app.</p>
-</div>
 </div>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Test</p>
+<p>Test :</p>
 </li>
 </ul>
 </div>
 <div class="sidebarblock">
 <div class="content">
 <div class="paragraph">
-<p>We have some basic BDD test made with <strong>Cucumber</strong> at <strong>test/cucumber</strong>.</p>
+<p>We have some basic BDD test made with <strong>Cucumber</strong> at <strong>features</strong> and we have done performance testing to simulate the load that the system can support, which results are in <strong>gatling</strong>.</p>
 </div>
 </div>
 </div>
@@ -1031,20 +1033,30 @@ Further decisions are required in order to provide any substantial data on this 
 <div class="sect1">
 <h2 id="section-design-decisions">9. Design Decisions</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="_language">9.1. Language</h3>
 <div class="sidebarblock">
 <div class="content">
 <div class="paragraph">
-<p>We have decided to do the whole application using JavaScript and npm because our references are made with JS and, npm because it is the most used package manager related to JavaScript applications.</p>
-</div>
-<div class="paragraph">
-<p>We may use Angular in the near future to improve app style, however, in the demo version, this is not contemplated.</p>
+<p>We have decided to do the whole application using JavaScript and npm because our references are made with JS and npm because it is the most used package manager related to JavaScript applications.</p>
 </div>
 <div class="paragraph">
 <p>See our main reference <a href="https://github.com/pheyvaer/solid-chess">here</a></p>
 </div>
 </div>
 </div>
+</div>
+<div class="sect2">
+<h3 id="_architecture">9.2. Architecture</h3>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p>The architecture used in all the applications that you want to do with SOLID should be peer-to-peer (p2p) because it connects two nodes directly without having any centralized information.</p>
+</div>
+</div>
+</div>
 <div style="page-break-after: always;"></div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -1104,8 +1116,8 @@ Further decisions are required in order to provide any substantial data on this 
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Portability</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The system must be able to operate on different platforms</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">High, high</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The system must be able to operate on different platforms and browsers</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">High, medium</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
@@ -1117,19 +1129,19 @@ Further decisions are required in order to provide any substantial data on this 
 <td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Usability</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Facilitate the use and understanding of the system to user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">High, medium</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Medium, medium</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Realibility and usability</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">If an error occurs without too much importance the system should continue working</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">High, high</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">High, medium</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">5</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Performance</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A user can get the search results (from messages, from friends &#8230;&#8203;) in less than 1.0 seconds</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Medium, high</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A user can get the search results (from messages, from friends &#8230;&#8203;) in less than 5.0 seconds</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Medium, low</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">6</p></td>
@@ -1159,7 +1171,7 @@ Further decisions are required in order to provide any substantial data on this 
 <td class="tableblock halign-left valign-top"><p class="tableblock">10</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Availability</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Messages sent by the user will not be lost, until he deletes them</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">High, low</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">High, medium</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">11</p></td>
@@ -1198,7 +1210,7 @@ Further decisions are required in order to provide any substantial data on this 
 <p>Amount of libs: As its said before, there are few resources concerning SOLID itself, so the amount of libs compatible with SOLID technology are scarce. We will be searching conscientiously, hoping to find something.</p>
 </li>
 <li>
-<p>Language : We are not used to JavaScript, and the information found refers to it, so we will have to check it out. We could also look for frameworks like Angular or Node.js that makes js development more comfortable.</p>
+<p>Language : We are not used to JavaScript, and the information found refers to it, so we will have to check it out. We could also look for frameworks like Node.js that makes js development more comfortable.</p>
 </li>
 <li>
 <p>RDF : We know the basic concepts of RDF, but we need to learn SPARQL to understand how SOLID base works.</p>
@@ -1265,6 +1277,10 @@ Further decisions are required in order to provide any substantial data on this 
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Solid</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em><strong>So</strong>cial <strong>L</strong>inked <strong>D</strong>ata</em> is a proposed set of conventions and tools for building <strong>decentralized</strong> Web applications based on <strong>Linked Data</strong> principles.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SPARQL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Language used to query RDF graphs.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Stakeholder</p></td>

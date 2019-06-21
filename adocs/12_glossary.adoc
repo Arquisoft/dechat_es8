@@ -16,6 +16,7 @@ In this glossary, you will find a list of words relating to this project and lin
 | Profile | is all the information related to the user including the _full name_, _phone number_ , _personal inbox_ , _storage_,...etc.
 | RDF    | _**R**esource **D**escription **F**ramework_ is a specification that defines how metadata, or descriptive information, should be formatted. This means the data can be transmitted in various syntaxes like *JSON-LD* (_JSON with a "context"_)
 | Solid        | _**So**cial **L**inked **D**ata_ is a proposed set of conventions and tools for building *decentralized* Web applications based on *Linked Data* principles.
+| SPARQL	| Language used to query RDF graphs.
 | Stakeholder     | is a person or group of people with an interest or concern in something, in this case, *this project*. It can be a _technical_ or _non technical_ user, _a company_, _developers_ or even , in our case, link:https://labra.solid.community[_our professor_] .
 | User   | is a person who uses/owns a Solid *Pod*.
 | WebID     | is a standardized *method* for *internet* services and members to know *who* they are *communicating* with.

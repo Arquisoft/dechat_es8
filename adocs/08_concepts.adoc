@@ -28,9 +28,8 @@ The application itself is in **main.js**. There are additional libraries and ser
 ==== "Under-the-hood" Concepts
 * Persistency :
 ****
-Data is stored in each user's private POD, so the only way to make it disappear is making the sender delete the message itself.
+Data is stored in each user's POD, so the only way to make it disappear is making the sender delete the message itself.
 ****
-
 
 * Error handling :
 ****
@@ -43,16 +42,15 @@ We use both Travis and Code coverage (Codecov) to ensure everything is fine
 ****
 
 ==== Development concepts
-* Build
+* Build :
 ****
 To build the app we use Node Js *webpack* running the following command
 ----
 npm run build:web
 ----
-We also use **http-server ./src** for the deployment of the app.
 ****
 
-* Test
+* Test :
 ****
-We have some basic BDD test made with **Cucumber** at **test/cucumber**.
+We have some basic BDD test made with **Cucumber** at **features** and we have done performance testing to simulate the load that the system can support, which results are in **gatling**.
 ****
