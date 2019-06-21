@@ -15,15 +15,8 @@ image::./Runtimeview.jpg[Runtime view,800]
 ==== Login
 Click on Login and you can decide how to login (solid, inrupt...).
 
-==== Choose option
-Once you are logged you can choose between three options: New Chat, Join Chat and Open Chat. 
-Each of them will be explained below.
+==== Choose friend
+Once you are logged in you can choose one of your solid friends. 
 
-==== New Chat
-If you want to create a new chat with a solid friend you must choose this option. First, you will choose your friend and the path where you want to store the chat (by default it is saved in your private directory). When everything is ready you can chat with your friend.
-
-==== Join Chat
-If someone starts a conversation with you, it will be in that section. You have got a list of your invitations and you can choose the path to store it, like in the previous option.
-
-==== Open chat
-If you want to continue a conversation, you have got a list of all of them in this section. You only have to choose one of them and can be continued.
+==== Start Chat
+The chat with your friend will be created and the previous messages will appear (if there are any). Once you are in the conversation you can send the messages you want. The chat will refresh every 4 seconds to see if the other interlocutor has sent something.
