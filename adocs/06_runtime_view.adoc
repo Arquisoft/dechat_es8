@@ -10,6 +10,9 @@ In this section we will explain the user interaction with dechat
 
 image::./Runtimeview.jpg[Runtime view,800]
 
+.Key map
+image::./Key.jpg[Key map,130]
+
 === In details
 
 ==== Login
