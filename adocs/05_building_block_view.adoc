@@ -4,7 +4,8 @@
 == Building Block View
 
 ****
-.Disclaimer
-At the current stage of the project, there is not enough information available to complete this section.
-Further decisions are required in order to provide any substantial data on this subject.
+In this system there are three parts that can be differentiated: graphical interface, business logic and POD manager.
+It could be a layered architecture. The graphical user interface makes use of the business logic and this, in turn, uses the POD manager to rescue and save the messages.
 ****
+
+image::./BuildingBlock.jpg[Building block,800]
