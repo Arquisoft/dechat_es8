@@ -88,7 +88,9 @@ function clearConver(){
 
 function loadChat() {  
     clearConver();
+	//Attribute text es el nombre formateado del amigo
 	const dataUrl = core.getDefaultDataUrl(userWebId)+this.getAttribute("text");
+	//Attribute value es el webid del amigo
     friendWebId = this.getAttribute("value");
     userDataUrl = dataUrl;
     setUpChat();
@@ -113,6 +115,7 @@ async function checkForNotificationsInbox() {
 }
 
 async function checkForNotificationsPublic() {
+	//Reemplaza espacios por %20
   const psFriendname = (await core.getFormattedName(friendWebId)).replace(/ /g,"%20");
   var updates = await core.checkUserForUpdates(await core.getUrl(userWebId, "public/")+"/chat_"+psFriendname);
   updates.forEach(async (fileurl) => {   
@@ -130,6 +133,7 @@ async function setUpChat() {
     const friendName = await core.getFormattedName(friendWebId);
     const userName=await core.getFormattedName(userWebId);
     $("#friend-name").text(friendName);
+	//userDataUrl es la url .../public/chat_**nombre del amigo**
     core.createChatFolder(userDataUrl);
     checkForNotificationsPublic();
     var i = 0; 

@@ -94,6 +94,7 @@ class DeChatCore {
   getDefaultDataUrl(webId) {
     const parsedWebId = URI.parse(webId);
 
+	//parsed.WebId.scherme es el protocolo (http) y host es el webid del usuario que está haciendo uso de la app
     return  `${parsedWebId.scheme}://${parsedWebId.host}/public/chat_`;
   }
   
