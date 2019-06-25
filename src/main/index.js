@@ -146,9 +146,11 @@ async function setUpChat() {
 		var nameThroughUrl = friendMessages[i].author.split("/").pop();
 		var friendThroughUrl = friendMessages[i].friend.split("/").pop();
 		if (nameThroughUrl === friendName && friendThroughUrl===userName) {
+			//Si envía el mensaje el amigo
 			addMessage(friendName,friendMessages[i].messageTx,false);
 		}
 		else if (nameThroughUrl === userName && friendThroughUrl===friendName) {
+			//Si envía el mensaje el usuario
 		  addMessage(userName,friendMessages[i].messageTx,true);
 		}
 		i++;

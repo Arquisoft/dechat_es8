@@ -131,6 +131,7 @@ class DeChatCore {
 	  `;
         
 		try {
+			//Guarda el mensaje en el POD del usuario que lo ha enviado
 			await dataSync.sendToFriendsInbox(await userDataUrl, sparqlUpdate);
 		} catch (e) {
 			console.err("Could not save new message.");
@@ -138,6 +139,7 @@ class DeChatCore {
 
 		if (toSend) {
 			try {
+				//Guarda el mensaje en la inbox del amigo
                 await dataSync.sendToFriendsInbox(await this.getUrl(friendWebId, "inbox/"), sparqlUpdate);
                 return true;
 			} catch (e) {
